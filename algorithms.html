@@ -35,7 +35,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-eaf6e403.js";
+            window.path_to_searchindex_js = "searchindex-1266cf32.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-dbd0f8ff.js"></script>
@@ -254,11 +254,11 @@
 </ul>
 <p>c. Specific steps (walkthrough)</p>
 <ul>
-<li>Initialize distance[source]=0, all others = ∞. Use a min-priority queue keyed by distance.</li>
+<li>Initialize <code>distance[source]=0</code>, all others = ∞. Use a min-priority queue keyed by distance.</li>
 <li>Simple Explanation: Greedily take smallest tenative distance, update if we find shorter paths.</li>
-<li>Extract node u with smallest tentative distance; for each neighbor v of u relax the edge: if dist[u] + w(u,v) &lt; dist[v], update dist[v] and predecessor, and push/update v in the queue.</li>
+<li>Extract node u with smallest tentative distance; for each neighbor v of u relax the edge: if <code>dist[u] + w(u,v) &lt; dist[v]</code>, update <code>dist[v]</code> and predecessor, and push/update <code>v</code> in the queue.</li>
 </ul>
-<p><a href="https://www.youtube.com/watch?v=1PPfjBS58Go">Helpful Video</a></p>
+<p><a href="https://www.youtube.com/watch?v=1PPfjBS58Go">Helpful Video (Can skip to 0:20)</a></p>
 <p>d. Data structures</p>
 <ul>
 <li>Min-priority queue (binary heap), distance array/map, predecessor map, adjacency list for neighbors.</li>
@@ -342,7 +342,7 @@
 <ul>
 <li>In-degree array/map, queue, adjacency list.</li>
 </ul>
-<p><a href="https://www.youtube.com/watch?v=7J3GadLzydI">Helpful Video, Start at 1:05</a></p>
+<p><a href="https://www.youtube.com/watch?v=7J3GadLzydI">Helpful Video, Can Skip to 1:05</a></p>
 <hr>
 <h3 id="7-selection-sort"><a class="header" href="#7-selection-sort">7) Selection Sort</a></h3>
 <p>a. What it does / when to use it</p>

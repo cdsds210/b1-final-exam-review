@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-eaf6e403.js";
+            window.path_to_searchindex_js = "searchindex-1266cf32.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-dbd0f8ff.js"></script>
@@ -181,7 +181,7 @@
 <ol>
 <li>How do you see what directory you’re currently in?</li>
 <li>How do you change your working directory? To a subfolder? To a parent directory?</li>
-<li>How can you see the full content of a file? How can you peak the beginning content?</li>
+<li>How can you see the full content of a file? How can you peek the beginning/ending content?</li>
 <li>How can see all files in your current directory? What flag do you need for hidden files? What flag to show file permissions?</li>
 </ol>
 <h2 id="git"><a class="header" href="#git">Git</a></h2>
@@ -219,7 +219,7 @@
 <li>Pattern matching: <code>match</code> for control flow and destructuring.</li>
 <li><code>Option&lt;T&gt;</code> to handle possibility of <code>None</code>, can be propagated with the <code>?</code> operator.</li>
 <li>Error handling: <code>Result&lt;T, E&gt;</code> for recoverable errors, <code>panic!</code> for unrecoverable; prefer <code>?</code> for propagation.</li>
-<li><code>enum</code>s are used for object with different variants (ex: <code>Direction::North</code>, <code>Direction::South</code>, and <code>Direction::East</code>)</li>
+<li><code>enum</code>s are used for objects with different variants (ex: <code>Direction::North</code>, <code>Direction::South</code>, and <code>Direction::East</code>)</li>
 <li><code>structs</code> are used to group related data, and provide OOP functionality with <code>impl</code></li>
 </ul>
 <h2 id="midterm-2-content"><a class="header" href="#midterm-2-content">Midterm 2 Content</a></h2>
@@ -321,6 +321,9 @@
 <li>After Peek: [5, 3], return 3 (no change)</li>
 <li>After Pop: [5], returned 3</li>
 </ul>
+<blockquote>
+<p>In rust, all peek and pop operations return <code>Option&lt;T&gt;</code>, to account for the possibility of an empty stack (same goes for Queues)</p>
+</blockquote>
 <hr>
 <h2 id="queue"><a class="header" href="#queue">Queue</a></h2>
 <h3 id="what-it-is-1"><a class="header" href="#what-it-is-1">What it is</a></h3>
@@ -359,6 +362,9 @@
 </ul>
 </li>
 </ul>
+<blockquote>
+<p>You can either use <code>push_back</code> and <code>pop_front</code> OR <code>push_front</code> and <code>pop_back</code>, but NOT <code>push_front</code> and <code>pop_front</code> to implement a Queue. Why?</p>
+</blockquote>
 <h3 id="when-to-use-1"><a class="header" href="#when-to-use-1">When to Use</a></h3>
 <ul>
 <li>BFS traversal (visit nodes level-by-level)</li>
@@ -380,8 +386,8 @@
 <h3 id="what-it-is-2"><a class="header" href="#what-it-is-2">What it is</a></h3>
 <p>A <strong>complete binary tree</strong> (all levels filled except possibly the last, which is filled left-to-right) that satisfies the <strong>heap property</strong>:</p>
 <ul>
-<li><strong>Min-Heap:</strong> parent \le children</li>
-<li><strong>Max-Heap:</strong> parent \ge children</li>
+<li><strong>Min-Heap:</strong> parent ≤ children</li>
+<li><strong>Max-Heap:</strong> parent ≥ children</li>
 </ul>
 <p>Used as an efficient priority queue data structure.</p>
 <h3 id="tree-representation"><a class="header" href="#tree-representation">Tree Representation</a></h3>
@@ -401,7 +407,7 @@
 <ul>
 <li>Left child at index 2i + 1</li>
 <li>Right child at index 2i + 2</li>
-<li>Parent at index \lfloor (i-1)/2 \rfloor</li>
+<li>Parent at index ⌊(i−1)/2⌋</li>
 </ul>
 </li>
 </ul>
@@ -531,7 +537,7 @@
 </ul>
 <h3 id="balanced-vs-unbalanced"><a class="header" href="#balanced-vs-unbalanced">Balanced vs. Unbalanced</a></h3>
 <ul>
-<li><strong>Balanced BST:</strong> height \approx log n — all operations are O(log n).</li>
+<li><strong>Balanced BST:</strong> height ≈ log n — all operations are O(log n).</li>
 <li><strong>Unbalanced BST:</strong> height up to n — degenerates to a linked list if not managed.</li>
 <li><strong>Self-balancing:</strong> Red-Black trees and AVL trees automatically rebalance on insertion/deletion through rotations, guaranteeing O(log n) operations.</li>
 </ul>
@@ -576,7 +582,7 @@
 <p>Undirected Graph:</p>
 <p><img src="images/udg.png" alt="alt text"></p>
 <p><strong>Weighted Graph</strong></p>
-<p>Definition: ANy graph where each edge is assigned a numerical value, or “weight,” which can represent a cost, distance, or other metric</p>
+<p>Definition: Any graph where each edge is assigned a numerical value, or “weight,” which can represent a cost, distance, or other metric</p>
 <p>Can be Directed (With Potentially Different Weights for Different Directions)</p>
 <p><img src="images/dg_weighted.png" alt="alt text"></p>
 <p>Or Undirected</p>
@@ -595,6 +601,9 @@
 </blockquote>
 <p>Trees (as graphs)</p>
 <p><img src="images/tree.png" alt="alt text"></p>
+<blockquote>
+<p>💡 What vocab words can we use to describe a tree?</p>
+</blockquote>
 <h2 id="graph"><a class="header" href="#graph">Graph</a></h2>
 <h3 id="list-of-edges-invalid"><a class="header" href="#list-of-edges-invalid">List of edges: INVALID</a></h3>
 <p>Maintain a list of each edge <code>(u, v)</code> in a graph. This is enough to cover MOST information but not ALL. If a node is not connected to any other nodes, it would be dropped from our representation.</p>
@@ -722,11 +731,11 @@ matrix[1][2] = 7
 </ul>
 <p>c. Specific steps (walkthrough)</p>
 <ul>
-<li>Initialize distance[source]=0, all others = ∞. Use a min-priority queue keyed by distance.</li>
+<li>Initialize <code>distance[source]=0</code>, all others = ∞. Use a min-priority queue keyed by distance.</li>
 <li>Simple Explanation: Greedily take smallest tenative distance, update if we find shorter paths.</li>
-<li>Extract node u with smallest tentative distance; for each neighbor v of u relax the edge: if dist[u] + w(u,v) &lt; dist[v], update dist[v] and predecessor, and push/update v in the queue.</li>
+<li>Extract node u with smallest tentative distance; for each neighbor v of u relax the edge: if <code>dist[u] + w(u,v) &lt; dist[v]</code>, update <code>dist[v]</code> and predecessor, and push/update <code>v</code> in the queue.</li>
 </ul>
-<p><a href="https://www.youtube.com/watch?v=1PPfjBS58Go">Helpful Video</a></p>
+<p><a href="https://www.youtube.com/watch?v=1PPfjBS58Go">Helpful Video (Can skip to 0:20)</a></p>
 <p>d. Data structures</p>
 <ul>
 <li>Min-priority queue (binary heap), distance array/map, predecessor map, adjacency list for neighbors.</li>
@@ -810,7 +819,7 @@ matrix[1][2] = 7
 <ul>
 <li>In-degree array/map, queue, adjacency list.</li>
 </ul>
-<p><a href="https://www.youtube.com/watch?v=7J3GadLzydI">Helpful Video, Start at 1:05</a></p>
+<p><a href="https://www.youtube.com/watch?v=7J3GadLzydI">Helpful Video, Can Skip to 1:05</a></p>
 <hr>
 <h3 id="7-selection-sort"><a class="header" href="#7-selection-sort">7) Selection Sort</a></h3>
 <p>a. What it does / when to use it</p>
@@ -908,12 +917,13 @@ matrix[1][2] = 7
 <h1 id="example-problems"><a class="header" href="#example-problems">Example Problems</a></h1>
 <p><img src="images/graph_problems.png" alt="alt text"></p>
 <hr>
-<p>Algorithm-focused example (conceptual)</p>
+<h2 id="algorithm-focused-example"><a class="header" href="#algorithm-focused-example">Algorithm-focused example</a></h2>
 <p>Given the directed, weighted graph below, perform the following (no code required - show steps and reasoning):</p>
 <ul>
+<li>Draw the graph</li>
 <li>Run Dijkstra’s algorithm from node <code>A</code> and show the tentative distance table after each extraction from the priority queue. Indicate the final shortest-path.</li>
 <li>Using the final predecessor pointers, write the shortest path and total cost from <code>A</code> to <code>E</code>.</li>
-<li>Explain why Dijkstra is valid here (mention weight constraints) and what would break if negative edges were present.</li>
+<li>Explain why Dijkstra is valid here (mention weight constraints) and what could break if negative edges were present.</li>
 </ul>
 <p>Graph (weights), draw the graph and then run Dijkstra’s:</p>
 <ul>

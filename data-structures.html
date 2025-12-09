@@ -35,7 +35,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-eaf6e403.js";
+            window.path_to_searchindex_js = "searchindex-1266cf32.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-dbd0f8ff.js"></script>
@@ -237,6 +237,9 @@
 <li>After Peek: [5, 3], return 3 (no change)</li>
 <li>After Pop: [5], returned 3</li>
 </ul>
+<blockquote>
+<p>In rust, all peek and pop operations return <code>Option&lt;T&gt;</code>, to account for the possibility of an empty stack (same goes for Queues)</p>
+</blockquote>
 <hr>
 <h2 id="queue"><a class="header" href="#queue">Queue</a></h2>
 <h3 id="what-it-is-1"><a class="header" href="#what-it-is-1">What it is</a></h3>
@@ -275,6 +278,9 @@
 </ul>
 </li>
 </ul>
+<blockquote>
+<p>You can either use <code>push_back</code> and <code>pop_front</code> OR <code>push_front</code> and <code>pop_back</code>, but NOT <code>push_front</code> and <code>pop_front</code> to implement a Queue. Why?</p>
+</blockquote>
 <h3 id="when-to-use-1"><a class="header" href="#when-to-use-1">When to Use</a></h3>
 <ul>
 <li>BFS traversal (visit nodes level-by-level)</li>
@@ -296,8 +302,8 @@
 <h3 id="what-it-is-2"><a class="header" href="#what-it-is-2">What it is</a></h3>
 <p>A <strong>complete binary tree</strong> (all levels filled except possibly the last, which is filled left-to-right) that satisfies the <strong>heap property</strong>:</p>
 <ul>
-<li><strong>Min-Heap:</strong> parent \le children</li>
-<li><strong>Max-Heap:</strong> parent \ge children</li>
+<li><strong>Min-Heap:</strong> parent ≤ children</li>
+<li><strong>Max-Heap:</strong> parent ≥ children</li>
 </ul>
 <p>Used as an efficient priority queue data structure.</p>
 <h3 id="tree-representation"><a class="header" href="#tree-representation">Tree Representation</a></h3>
@@ -317,7 +323,7 @@
 <ul>
 <li>Left child at index 2i + 1</li>
 <li>Right child at index 2i + 2</li>
-<li>Parent at index \lfloor (i-1)/2 \rfloor</li>
+<li>Parent at index ⌊(i−1)/2⌋</li>
 </ul>
 </li>
 </ul>
@@ -447,7 +453,7 @@
 </ul>
 <h3 id="balanced-vs-unbalanced"><a class="header" href="#balanced-vs-unbalanced">Balanced vs. Unbalanced</a></h3>
 <ul>
-<li><strong>Balanced BST:</strong> height \approx log n — all operations are O(log n).</li>
+<li><strong>Balanced BST:</strong> height ≈ log n — all operations are O(log n).</li>
 <li><strong>Unbalanced BST:</strong> height up to n — degenerates to a linked list if not managed.</li>
 <li><strong>Self-balancing:</strong> Red-Black trees and AVL trees automatically rebalance on insertion/deletion through rotations, guaranteeing O(log n) operations.</li>
 </ul>
