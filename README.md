@@ -2,7 +2,9 @@
 
 A repository containing the markdown files for B2 and B3 discussion section final exam review.
 
-To run locally, first download the mdbook rust crate:
+[![View the mdBook](https://img.shields.io/badge/mdBook-b1--final--exam--review-blue)](https://cdsds210.github.io/b1-final-exam-review/)
+
+To host the website locally, first download the mdbook rust crate:
 
 ```bash
 cargo install mdbook
