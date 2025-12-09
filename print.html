@@ -1,0 +1,971 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>DS210 Final Exam Review</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-3baf9706.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-dbd0f8ff.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">DS210 Final Exam Review</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="shell-and-git"><a class="header" href="#shell-and-git">Shell and Git</a></h1>
+<p>You just need to know the stuff you’ve been doing all semester!</p>
+<h2 id="basic-shell"><a class="header" href="#basic-shell">Basic Shell</a></h2>
+<ol>
+<li>How do you see what directory you’re currently in?</li>
+<li>How do you change your working directory? To a subfolder? To a parent directory?</li>
+<li>How can you see the full content of a file? How can you peak the beginning content?</li>
+<li>How can see all files in your current directory? What flag do you need for hidden files? What flag to show file permissions?</li>
+</ol>
+<h2 id="git"><a class="header" href="#git">Git</a></h2>
+<p>Again, just think the basics</p>
+<ol>
+<li>How to stage changes for commits</li>
+<li>How to commit changes with a message</li>
+<li>How to create/checkout a new branch</li>
+<li>How to push changes to a remote (github) repository</li>
+</ol>
+<blockquote>
+<p>If this is no-stress for you, great job! You’ve successfully become really comfortable with git (an in-demand and employable skill)</p>
+</blockquote>
+<h2 id="cargo"><a class="header" href="#cargo">Cargo</a></h2>
+<ol>
+<li>How do you create a new rust project?</li>
+<li>How do you run a rust project?</li>
+<li>How do you check if a rust project will compile</li>
+<li>How do you run all tests for a cargo project? How do you run certain tests?</li>
+<li>How do you compile the rust binary? How do you do this without debugging safety rails?</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="rust-quick-review-and-what-to-know"><a class="header" href="#rust-quick-review-and-what-to-know">Rust: Quick Review and What to Know</a></h1>
+<h2 id="basics"><a class="header" href="#basics">Basics</a></h2>
+<ul>
+<li>Ownership model: each value has a single owner; move semantics by default.
+<ul>
+<li>When an item is moved, its heap memory will be deallocated when the variable goes out of scope (Box Deallocation Principle)</li>
+</ul>
+</li>
+<li>Borrowing: references <code>&amp;T</code> (immutable) and <code>&amp;mut T</code> (mutable) with lifetimes enforcing safety.</li>
+<li>Mutability: <code>let</code> vs <code>let mut</code></li>
+<li>Types &amp; inference: static typing with strong inference</li>
+<li>Pattern matching: <code>match</code> for control flow and destructuring.</li>
+<li><code>Option&lt;T&gt;</code> to handle possibility of <code>None</code>, can be propagated with the <code>?</code> operator.</li>
+<li>Error handling: <code>Result&lt;T, E&gt;</code> for recoverable errors, <code>panic!</code> for unrecoverable; prefer <code>?</code> for propagation.</li>
+<li><code>enum</code>s are used for object with different variants (ex: <code>Direction::North</code>, <code>Direction::South</code>, and <code>Direction::East</code>)</li>
+<li><code>structs</code> are used to group related data, and provide OOP functionality with <code>impl</code></li>
+</ul>
+<h2 id="midterm-2-content"><a class="header" href="#midterm-2-content">Midterm 2 Content</a></h2>
+<ul>
+<li>Memory theory: stack vs heap, where values live, and how ownership controls deallocation.</li>
+<li>Ownership &amp; borrowing rules: who can mutate, who can read, and how lifetimes prevent dangling refs.</li>
+<li>References: <code>&amp;T</code> vs <code>&amp;mut T</code>, borrowing rules (one <code>&amp;mut</code> or many <code>&amp;</code>), lifetime annotations conceptually.</li>
+<li><code>Vec</code>: dynamic array; push/pop at end O(1) amortized; contiguous memory
+<ul>
+<li>Will have a fat pointer with <code>ptr</code>, <code>len</code>, and <code>cap</code></li>
+</ul>
+</li>
+<li>Slice <code>&amp;[T]</code> points to a contiguous region in memory as a subset of another collection
+<ul>
+<li>Fat pointer contains <code>ptr</code> and <code>len</code></li>
+<li>Difference between <code>String</code>, <code>&amp;String</code> and <code>&amp;str</code></li>
+</ul>
+</li>
+<li><code>HashMap</code> / <code>HashSet</code>: average O(1) lookup/insert/delete; require <code>Hash</code> + <code>Eq</code> needed for keys</li>
+<li><code>BTreeMap</code> / <code>BTreeSet</code>: ordered maps/sets; <code>BTreeMap</code> is good for ordered unique value iteration and large datasets.</li>
+</ul>
+<h2 id="traits-very-brief"><a class="header" href="#traits-very-brief">Traits (very brief)</a></h2>
+<ul>
+<li>What they are: interfaces describing shared behavior (<code>trait Foo { fn bar(&amp;self); }</code>).</li>
+<li>Important derivable traits: <code>Debug</code>, <code>Clone</code>, <code>Copy</code> (small, trivially copyable types), <code>Eq</code>/<code>PartialEq</code>, <code>Ord</code>/<code>PartialOrd</code>, <code>Hash</code>.</li>
+<li>When to derive vs implement manually: derive when semantics are straightforward; implement when custom behavior exists.
+<ul>
+<li>Derive with macro <code>[#derive(T1, T2, T3)]</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="post-midterm"><a class="header" href="#post-midterm">Post-Midterm</a></h2>
+<ul>
+<li>Iterators &amp; closures: iterator adaptors (<code>map</code>, <code>filter</code>, <code>for_each</code>), <code>for</code> loops vs iterator methods, <code>.collect()</code> to gather results.</li>
+<li>Reading algorithm code: you should be able to look at Rust code, and know what algorithm that is / determine it’s time and space complexity</li>
+<li>Writing tests: <code>#[test]</code> and <code>cargo test</code> basics; use <code>assert!</code>/<code>assert_eq!</code> and small focused cases.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="data-structures"><a class="header" href="#data-structures">Data Structures</a></h1>
+<h2 id="be-comfortable-with-the-purpose-and-functionality-of-each-of-the-following-data-structures"><a class="header" href="#be-comfortable-with-the-purpose-and-functionality-of-each-of-the-following-data-structures">Be comfortable with the purpose and functionality of each of the following data structures</a></h2>
+<ol>
+<li>Stack</li>
+<li>Queue</li>
+<li>Binary Heap</li>
+<li>Binary Search Trees</li>
+<li>Graphs (covered separately)</li>
+</ol>
+<p>For each data structure below you’ll find:</p>
+<ul>
+<li>What it is and when to use it</li>
+<li>Time and space complexity for core operations</li>
+<li>Notable properties and implementation details</li>
+<li>Practical use cases and trade-offs</li>
+</ul>
+<hr>
+<h2 id="stack"><a class="header" href="#stack">Stack</a></h2>
+<h3 id="what-it-is"><a class="header" href="#what-it-is">What it is</a></h3>
+<p>A linear data structure that follows the <strong>Last-In-First-Out (LIFO)</strong> principle: the most recently added element is the first one removed. Think of a stack of plates — you add and remove from the same end (the top).</p>
+<h3 id="core-operations--complexity"><a class="header" href="#core-operations--complexity">Core Operations &amp; Complexity</a></h3>
+<ul>
+<li><strong>Push</strong> (insert): O(1) amortized</li>
+<li><strong>Pop</strong> (remove): O(1)</li>
+<li><strong>Peek</strong> (view top): O(1)</li>
+<li><strong>Space:</strong> O(n) where n is the number of elements</li>
+</ul>
+<h3 id="notable-features"><a class="header" href="#notable-features">Notable Features</a></h3>
+<ul>
+<li>
+<p>Stacks are typically implemented as a <strong>dynamic array (vector)</strong> in most languages, including Rust.</p>
+<ul>
+<li>Elements are stored contiguously in memory.</li>
+<li>Push appends to the end; pop removes from the end.</li>
+<li>Amortized O(1) because the vector occasionally reallocates, but this happens infrequently.</li>
+</ul>
+</li>
+<li>
+<p>Stacks are “just a vec” (or array) because:</p>
+<ul>
+<li>You only ever access/modify one end, so you don’t need fancy data structures.</li>
+<li>The vector’s end pointer and capacity handle the abstraction efficiently.</li>
+<li>No need for linked lists — contiguous memory is faster in practice due to cache locality.</li>
+</ul>
+</li>
+</ul>
+<h3 id="when-to-use"><a class="header" href="#when-to-use">When to Use</a></h3>
+<ul>
+<li>Function call stacks (recursion, system call frames)</li>
+<li>Expression evaluation (infix to postfix conversion)</li>
+<li>Backtracking algorithms (DFS uses an implicit or explicit stack)</li>
+<li>Parenthesis matching and bracket validation</li>
+</ul>
+<h3 id="example-walkthrough"><a class="header" href="#example-walkthrough">Example Walkthrough</a></h3>
+<p>Stack operations: Push 5, Push 3, Push 7, Pop, Peek, Pop</p>
+<ul>
+<li>After Push 5: [5]</li>
+<li>After Push 3: [5, 3]</li>
+<li>After Push 7: [5, 3, 7]</li>
+<li>After Pop: [5, 3], returned 7</li>
+<li>After Peek: [5, 3], return 3 (no change)</li>
+<li>After Pop: [5], returned 3</li>
+</ul>
+<hr>
+<h2 id="queue"><a class="header" href="#queue">Queue</a></h2>
+<h3 id="what-it-is-1"><a class="header" href="#what-it-is-1">What it is</a></h3>
+<p>A linear data structure that follows the <strong>First-In-First-Out (FIFO)</strong> principle: elements are inserted at the back and removed from the front, like a line at a store.</p>
+<h3 id="core-operations--complexity-1"><a class="header" href="#core-operations--complexity-1">Core Operations &amp; Complexity</a></h3>
+<ul>
+<li><strong>Enqueue</strong> (insert back): O(1) amortized</li>
+<li><strong>Dequeue</strong> (remove front): O(1) amortized</li>
+<li><strong>Peek</strong> (view front): O(1)</li>
+<li><strong>Space:</strong> O(n) where n is the number of elements</li>
+</ul>
+<h3 id="notable-features-1"><a class="header" href="#notable-features-1">Notable Features</a></h3>
+<ul>
+<li>
+<p><strong>Why it isn’t just a vec:</strong></p>
+<ul>
+<li>If you use a simple dynamic array, dequeuing from the front is O(n) because you’d need to shift all remaining elements forward.</li>
+<li>A standard vector only provides efficient removal from the end.</li>
+</ul>
+</li>
+<li>
+<p><strong>Circular Buffer / VecDeque (Rust’s efficient queue):</strong></p>
+<ul>
+<li>Uses a <strong>circular buffer</strong>: a fixed-size array where the “front” and “back” pointers wrap around.</li>
+<li>Both enqueue and dequeue operate at pointers without shifting, achieving O(1) amortized.</li>
+<li>When the circular buffer is full, it reallocates (like a vector) to a larger size.</li>
+<li>Memory usage is linear O(n), but the buffer may have some wasted capacity between reallocations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Why not a linked list?</strong></p>
+<ul>
+<li>Linked lists waste memory on pointers (worse cache locality).</li>
+<li>Circular buffers are more cache-friendly and faster in practice, even with potential reallocations.</li>
+<li>Rust’s <code>VecDeque</code> uses a circular buffer for this reason.</li>
+</ul>
+</li>
+</ul>
+<h3 id="when-to-use-1"><a class="header" href="#when-to-use-1">When to Use</a></h3>
+<ul>
+<li>BFS traversal (visit nodes level-by-level)</li>
+<li>Task scheduling (jobs queued for processing)</li>
+<li>Print job management</li>
+</ul>
+<h3 id="example-walkthrough-1"><a class="header" href="#example-walkthrough-1">Example Walkthrough</a></h3>
+<p>Queue operations: Enqueue 10, Enqueue 20, Enqueue 30, Dequeue, Peek, Dequeue</p>
+<ul>
+<li>After Enqueue 10: [10]</li>
+<li>After Enqueue 20: [10, 20]</li>
+<li>After Enqueue 30: [10, 20, 30]</li>
+<li>After Dequeue: [20, 30], returned 10</li>
+<li>After Peek: [20, 30], return 20 (no change)</li>
+<li>After Dequeue: [30], returned 20</li>
+</ul>
+<hr>
+<h2 id="binary-heap"><a class="header" href="#binary-heap">Binary Heap</a></h2>
+<h3 id="what-it-is-2"><a class="header" href="#what-it-is-2">What it is</a></h3>
+<p>A <strong>complete binary tree</strong> (all levels filled except possibly the last, which is filled left-to-right) that satisfies the <strong>heap property</strong>:</p>
+<ul>
+<li><strong>Min-Heap:</strong> parent \le children</li>
+<li><strong>Max-Heap:</strong> parent \ge children</li>
+</ul>
+<p>Used as an efficient priority queue data structure.</p>
+<h3 id="tree-representation"><a class="header" href="#tree-representation">Tree Representation</a></h3>
+<p>Conceptually, a binary heap is visualized as a tree:</p>
+<pre><code>Min-Heap Example:
+        1
+       / \
+      3   5
+     / \ /
+    7  6 8
+</code></pre>
+<h3 id="array-representation"><a class="header" href="#array-representation">Array Representation</a></h3>
+<p>Heaps are stored in an <strong>array</strong> for efficiency:</p>
+<ul>
+<li>Root at index 0</li>
+<li>For node at index i:
+<ul>
+<li>Left child at index 2i + 1</li>
+<li>Right child at index 2i + 2</li>
+<li>Parent at index \lfloor (i-1)/2 \rfloor</li>
+</ul>
+</li>
+</ul>
+<p>Same heap as above in array form: <code>[1, 3, 5, 7, 6, 8]</code></p>
+<h3 id="core-operations--complexity-2"><a class="header" href="#core-operations--complexity-2">Core Operations &amp; Complexity</a></h3>
+<ul>
+<li><strong>Insert:</strong> O(log n)</li>
+<li><strong>Delete (extract min/max):</strong> O(log n)</li>
+<li><strong>Peek (view min/max):</strong> O(1)</li>
+<li><strong>Space:</strong> O(n)</li>
+</ul>
+<h3 id="insert-procedure-sift-up--bubble-up"><a class="header" href="#insert-procedure-sift-up--bubble-up">Insert Procedure (Sift-Up / Bubble-Up)</a></h3>
+<ol>
+<li>Add the new element to the end of the array (next available leaf position).</li>
+<li><strong>Sift up:</strong> Compare with parent; if violates heap property, swap with parent.</li>
+<li>Continue up the tree until the heap property is restored or you reach the root.</li>
+</ol>
+<p><strong>Example (min-heap):</strong> Insert 2 into <code>[1, 3, 5, 7, 6, 8]</code></p>
+<ul>
+<li>Add 2 at end: <code>[1, 3, 5, 7, 6, 8, 2]</code></li>
+<li>2’s parent (index 2) is 5; 2 &lt; 5, so swap: <code>[1, 3, 2, 7, 6, 8, 5]</code></li>
+<li>2’s parent (index 1) is 3; 2 &lt; 3, so swap: <code>[1, 2, 3, 7, 6, 8, 5]</code></li>
+<li>2’s parent (index 0) is 1; 2 &gt; 1, so stop.</li>
+<li>Result: <code>[1, 2, 3, 7, 6, 8, 5]</code>. Heap property maintained.</li>
+</ul>
+<h3 id="remove-extract-minmax-procedure-sift-down--bubble-down"><a class="header" href="#remove-extract-minmax-procedure-sift-down--bubble-down">Remove (Extract Min/Max) Procedure (Sift-Down / Bubble-Down)</a></h3>
+<ol>
+<li>Extract the root (min or max).</li>
+<li>Move the <strong>last element</strong> to the root position.</li>
+<li><strong>Sift down:</strong> Compare the root with its children; if it violates the heap property, swap with the smaller (min-heap) or larger (max-heap) child.</li>
+<li>Continue down until the heap property is restored or you reach a leaf.</li>
+</ol>
+<p><strong>Example (min-heap):</strong> Remove min from <code>[1, 2, 3, 7, 6, 8, 5]</code></p>
+<ul>
+<li>Extract 1; move last element (5) to root: <code>[5, 2, 3, 7, 6, 8]</code></li>
+<li>5’s children are 2 and 3; min is 2; 5 &gt; 2, so swap: <code>[2, 5, 3, 7, 6, 8]</code></li>
+<li>5’s children are 7 and 6; min is 6; 5 &lt; 6, so stop.</li>
+<li>Result: <code>[2, 5, 3, 7, 6, 8]</code>. Heap property maintained.</li>
+</ul>
+<h3 id="when-to-use-2"><a class="header" href="#when-to-use-2">When to Use</a></h3>
+<ul>
+<li>Priority queues (e.g., Dijkstra’s algorithm, Huffman coding)</li>
+<li>Heap sort (in-place sorting algorithm)</li>
+<li>Finding the k smallest/largest elements</li>
+<li>Scheduling and load balancing</li>
+<li>Median finding in a stream</li>
+</ul>
+<h3 id="notable-properties"><a class="header" href="#notable-properties">Notable Properties</a></h3>
+<ul>
+<li>Efficient for repeated access to the minimum (or maximum) element.</li>
+<li>Not suitable for arbitrary element lookup or deletion (beyond the root).</li>
+<li>Both insert and remove are O(log n), making heaps very efficient for dynamic min/max queries.</li>
+</ul>
+<hr>
+<h2 id="binary-search-tree-bst"><a class="header" href="#binary-search-tree-bst">Binary Search Tree (BST)</a></h2>
+<h3 id="what-it-is-3"><a class="header" href="#what-it-is-3">What it is</a></h3>
+<p>A <strong>binary tree</strong> where each node has at most two children and satisfies the <strong>BST property</strong>:</p>
+<ul>
+<li>All values in the left subtree are <strong>less than</strong> the node’s value.</li>
+<li>All values in the right subtree are <strong>greater than</strong> the node’s value.</li>
+</ul>
+<p>This ordering enables efficient searching and insertion.</p>
+<h3 id="core-operations--complexity-3"><a class="header" href="#core-operations--complexity-3">Core Operations &amp; Complexity</a></h3>
+<ul>
+<li>
+<p><strong>Search:</strong></p>
+<ul>
+<li>Best/Average: O(log n) (balanced tree)</li>
+<li>Worst: O(n) (degenerate/linear tree if not balanced)</li>
+</ul>
+</li>
+<li>
+<p><strong>Insert:</strong></p>
+<ul>
+<li>Best/Average: O(log n)</li>
+<li>Worst: O(n) (if tree becomes unbalanced)</li>
+</ul>
+</li>
+<li>
+<p><strong>Delete:</strong></p>
+<ul>
+<li>Best/Average: O(log n)</li>
+<li>Worst: O(n)</li>
+</ul>
+</li>
+<li>
+<p><strong>In-order traversal:</strong> O(n) (yields elements in sorted order)</p>
+</li>
+<li>
+<p><strong>Space:</strong> O(n)</p>
+</li>
+</ul>
+<h3 id="notable-features-2"><a class="header" href="#notable-features-2">Notable Features</a></h3>
+<ul>
+<li><strong>Ordered traversal:</strong> In-order DFS on a BST yields elements in sorted order.</li>
+<li><strong>Balancing problem:</strong> A naive BST can degrade into a linked list if insertions are in sorted order (e.g., 1, 2, 3, 4, 5).
+<ul>
+<li>Solution: <strong>Self-balancing BSTs</strong> (AVL, Red-Black trees) maintain O(log n) height through rotations.</li>
+<li>Rust’s standard library uses <strong>red-black trees</strong> for <code>BTreeMap</code> and <code>BTreeSet</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="search-procedure"><a class="header" href="#search-procedure">Search Procedure</a></h3>
+<ol>
+<li>Start at root.</li>
+<li>Compare target with current node:
+<ul>
+<li>If equal, found it.</li>
+<li>If target &lt; current, go left.</li>
+<li>If target &gt; current, go right.</li>
+</ul>
+</li>
+<li>Continue until found or reach a null pointer (not found).</li>
+</ol>
+<p><strong>Example:</strong> Search for 6 in BST with root 4, left child 2, right child 6</p>
+<ul>
+<li>Compare 6 with 4: 6 &gt; 4, go right.</li>
+<li>Found 6.</li>
+</ul>
+<h3 id="when-to-use-3"><a class="header" href="#when-to-use-3">When to Use</a></h3>
+<ul>
+<li>Dictionaries and maps (though hash tables are often faster for lookup alone).</li>
+<li>Sorted data structures (maintaining sorted order with dynamic insertions/deletions).</li>
+<li>Range queries (find all elements between a and b).</li>
+<li>Building decision trees.</li>
+<li>Self-balancing variants (AVL, Red-Black) are used in databases and filesystems.</li>
+</ul>
+<h3 id="balanced-vs-unbalanced"><a class="header" href="#balanced-vs-unbalanced">Balanced vs. Unbalanced</a></h3>
+<ul>
+<li><strong>Balanced BST:</strong> height \approx log n — all operations are O(log n).</li>
+<li><strong>Unbalanced BST:</strong> height up to n — degenerates to a linked list if not managed.</li>
+<li><strong>Self-balancing:</strong> Red-Black trees and AVL trees automatically rebalance on insertion/deletion through rotations, guaranteeing O(log n) operations.</li>
+</ul>
+<hr>
+<h2 id="btreemap--btreeset-brief"><a class="header" href="#btreemap--btreeset-brief">BTreeMap / BTreeSet (brief)</a></h2>
+<h3 id="what-they-are"><a class="header" href="#what-they-are">What they are</a></h3>
+<p><code>BTreeMap</code> and <code>BTreeSet</code> are ordered map/set implementations based on a B-tree (a balanced, multi-way search tree). Unlike binary trees, B-trees keep multiple keys per node and keep the tree shallow by allowing many children per node.</p>
+<h3 id="complexity-and-when-to-use"><a class="header" href="#complexity-and-when-to-use">Complexity and when to use</a></h3>
+<ul>
+<li><strong>Search/Insert/Delete:</strong> O(log n) (log base depends on node fanout)</li>
+<li><strong>Space:</strong> O(n) with extra per-node overhead for storing multiple keys</li>
+<li>Use <code>BTreeMap</code>/<code>BTreeSet</code> when you need an ordered map/set with good locality and predictable O(log n) performance. For example, you can have a HashMap with sorted keys (alphabetical order)!</li>
+</ul>
+<h3 id="practical-notes"><a class="header" href="#practical-notes">Practical notes</a></h3>
+<ul>
+<li>Iteration over a <code>BTreeMap</code> or <code>BTreeSet</code> yields elements in sorted order without additional work.</li>
+<li>B-trees are especially useful when nodes are sized to match cache lines or disk pages (reducing pointer chasing). You’ll learn more about this in 310!</li>
+</ul>
+<h2 id="summary-table"><a class="header" href="#summary-table">Summary Table</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Data Structure</th><th>Insert</th><th>Remove</th><th>Search</th><th>Use Case</th></tr>
+</thead>
+<tbody>
+<tr><td>Stack</td><td>O(1)</td><td>O(1)</td><td>O(n)</td><td>LIFO, recursion, undo</td></tr>
+<tr><td>Queue</td><td>O(1)</td><td>O(1)</td><td>O(n)</td><td>FIFO, BFS, task scheduling</td></tr>
+<tr><td>Binary Heap</td><td>O(log n)</td><td>O(log n)</td><td>O(n)</td><td>Priority queues, heapsort</td></tr>
+<tr><td>BST (balanced)</td><td>O(log n)</td><td>O(log n)</td><td>O(log n)</td><td>Sorted maps, range queries</td></tr>
+<tr><td>BST (unbalanced)</td><td>O(n)</td><td>O(n)</td><td>O(n)</td><td>Bad — avoid in practice</td></tr>
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="graphs"><a class="header" href="#graphs">Graphs</a></h1>
+<blockquote>
+<p>Graphs are a non-linear data structure that represent relationships between objects using nodes (or vertices) and edges (or links)</p>
+</blockquote>
+<h2 id="types-of-graphs-vocab"><a class="header" href="#types-of-graphs-vocab">Types of Graphs (Vocab)</a></h2>
+<p>Directed Graph:</p>
+<p><img src="images/dg.png" alt="alt text"></p>
+<p>Undirected Graph:</p>
+<p><img src="images/udg.png" alt="alt text"></p>
+<p><strong>Weighted Graph</strong></p>
+<p>Definition: ANy graph where each edge is assigned a numerical value, or “weight,” which can represent a cost, distance, or other metric</p>
+<p>Can be Directed (With Potentially Different Weights for Different Directions)</p>
+<p><img src="images/dg_weighted.png" alt="alt text"></p>
+<p>Or Undirected</p>
+<p><img src="images/udg_weigted.png" alt="alt text"></p>
+<p><strong>Unweighted Graphs</strong></p>
+<p>A graph without weights is literally just the graphs we saw before, don’t overthink it!</p>
+<p><strong>Cyclic Graph</strong>: Any graph that has a cycle</p>
+<p>Cycles may be long:</p>
+<p><img src="images/cyclic.png" alt="alt text"></p>
+<p>Or as short as two elements.</p>
+<p><img src="images/dg_weighted.png" alt="alt text"></p>
+<p><strong>Acyclic Graph</strong>: Any graph that doesn’t have a cycle</p>
+<p><strong>Directed Acyclic Graph (DAG):</strong> Any directed graph that doesn’t have a cycle</p>
+<blockquote>
+<p>Note: These are all overlapping definitions. A DAG is an acyclic Graph, and is a Directed Graph, and may be weighted or unweighted</p>
+</blockquote>
+<p>Trees (as graphs)</p>
+<p><img src="images/tree.png" alt="alt text"></p>
+<h2 id="graph"><a class="header" href="#graph">Graph</a></h2>
+<h3 id="list-of-edges-invalid"><a class="header" href="#list-of-edges-invalid">List of edges: INVALID</a></h3>
+<p>Maintain a list of each edge <code>(u, v)</code> in a graph. This is enough to cover MOST information but not ALL. If a node is not connected to any other nodes, it would be dropped from our representation.</p>
+<h3 id="list-of-notes-invalid"><a class="header" href="#list-of-notes-invalid">List of notes: INVALID</a></h3>
+<p>Maintain a list of each node <code>V</code> in the graph. This just doesn’t give any information to encode edge relationships, so this also isn’t enough</p>
+<h3 id="adjacency-list"><a class="header" href="#adjacency-list">Adjacency List</a></h3>
+<p>An adjacency list represents a graph as a mapping from each vertex to a list (or set) of its neighbors. It’s typically implemented with a dictionary (or hash map) keyed by node IDs pointing to arrays/lists of adjacent nodes. For weighted graphs, store pairs <code>(neighbor, weight)</code>.</p>
+<p>Example Directed Graph (Python, string node ids):</p>
+<pre><code class="language-python">graph = {
+ 'A': [('B', 5), ('C', 2)],
+ 'B': [('A', 5), ('D', 1)],
+ 'C': [('A', 2)],
+ 'D': [('B', 1)],
+}
+</code></pre>
+<p>Example Unweighted Graph (Python):</p>
+<pre><code class="language-python">graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D'],
+    'C': ['A'],
+    'D': ['B']
+}
+</code></pre>
+<blockquote>
+<p>Note: <strong>Undirected graphs</strong> are just stored as <strong>directed</strong> graphs, and whenever you add edge <code>u, v</code> to the adjacency list, also add edge <code>v, u</code>.</p>
+</blockquote>
+<ul>
+<li><strong>Strengths:</strong> memory-efficient for sparse graphs (O(V + E)), fast to iterate over neighbors, natural for DFS/BFS and most graph algorithms (Dijkstra, topological sort).</li>
+<li><strong>Weaknesses:</strong> checking if an edge (u, v) exists may be O(deg(u)); not ideal for extremely dense graphs where adjacency queries need to be constant time.</li>
+<li><strong>When to use:</strong> real-world networks (social/follow graphs), road networks, algorithm implementations where iterating neighbors is common.</li>
+</ul>
+<h3 id="adjacency-matrix"><a class="header" href="#adjacency-matrix">Adjacency Matrix</a></h3>
+<p>An adjacency matrix is a 2D array (matrix) of size <code>V x V</code> where <code>matrix[u][v]</code> indicates the presence (and optionally weight) of an edge between <code>u</code> and <code>v</code>. Node IDs are typically mapped to integer indices.</p>
+<p>Example (Python, unweighted):</p>
+<pre><code class="language-python">n = 4
+matrix = [[0]*n for _ in range(n)]
+# add directed edge 0 -&gt; 1
+matrix[0][1] = 1
+# add weighted edge 1 -&gt; 2 with weight 7
+matrix[1][2] = 7
+</code></pre>
+<ul>
+<li><strong>Strengths:</strong> O(1) time to check if an edge exists, simple linear algebra operations (matrix powers give counts of paths), compact for dense graphs.</li>
+<li><strong>Weaknesses:</strong> uses O(V^2) memory which is prohibitive for large sparse graphs; iterating neighbors is O(V) rather than O(deg(v)).</li>
+<li><strong>When to use:</strong> small graphs, dense graphs, algorithms that rely on matrix operations (e.g., some network analysis tasks), or when constant-time edge queries are required.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
+<h2 id="algorithms-to-know"><a class="header" href="#algorithms-to-know">Algorithms to Know</a></h2>
+<ol>
+<li>BFS</li>
+<li>DFS</li>
+<li>Dijkstra’s</li>
+<li>Kruskal’s MST</li>
+<li>Prim’s MST</li>
+<li>Topological Sort</li>
+<li>Selection Sort</li>
+<li>Quick Sort</li>
+<li>Merge Sort</li>
+</ol>
+<p>For each algorithm below you’ll find:</p>
+<ul>
+<li>What it does and when to use it</li>
+<li>Time and space complexity</li>
+<li>Concrete step-by-step walkthrough (small example)</li>
+<li>Core data structures it uses</li>
+</ul>
+<hr>
+<h3 id="1-breadth-first-search-bfs"><a class="header" href="#1-breadth-first-search-bfs">1) Breadth-First Search (BFS)</a></h3>
+<p>a. What it does / when to use it</p>
+<ul>
+<li>Explores a graph level-by-level from a start node.</li>
+<li>Use BFS to find the shortest path in an unweighted graph, to check connectivity, or to compute levels (distance in number of edges) from a source.</li>
+</ul>
+<p>b. Complexity</p>
+<ul>
+<li>Time: O(V + E)</li>
+<li>Space: O(V) (queue + visited set)</li>
+</ul>
+<p>c. Specific steps (walkthrough)</p>
+<ul>
+<li>Start at node A. Mark A visited and enqueue it.</li>
+<li>Steps:
+<ul>
+<li>While queue not empty:</li>
+<li>dequeue node u</li>
+<li>visit its neighbors v that are not visited: mark visited, record path, and enqueue v.</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/bfs.png" alt="BFS"></p>
+<p>d. Data structures</p>
+<ul>
+<li>Queue (FIFO), visited set/map, optional hashmap for reconstructing paths.</li>
+</ul>
+<hr>
+<h3 id="2-depth-first-search-dfs"><a class="header" href="#2-depth-first-search-dfs">2) Depth-First Search (DFS)</a></h3>
+<p>a. What it does / when to use it</p>
+<ul>
+<li>Explores as deep as possible along each branch before backtracking. Use DFS for cycle detection, topological sorting (when implemented with postorder), connected components, and exploring search spaces where you want to explore paths completely.</li>
+</ul>
+<p>b. Complexity</p>
+<ul>
+<li>Time: O(V + E)</li>
+<li>Space: O(V) (recursion stack or explicit stack + visited)</li>
+</ul>
+<p>c. Specific steps (walkthrough)</p>
+<p>Recursive approach: visit node, mark visited, recursively visit each unvisited neighbor.</p>
+<p><img src="images/dfs.png" alt="alt text"></p>
+<p>d. Data structures</p>
+<ul>
+<li>Recursion stack or explicit stack, visited set/map.</li>
+</ul>
+<p>Notes: DFS does not guarantee shortest paths in terms of edge count.</p>
+<hr>
+<h3 id="3-dijkstras-algorithm"><a class="header" href="#3-dijkstras-algorithm">3) Dijkstra’s Algorithm</a></h3>
+<p>a. What it does / when to use it</p>
+<ul>
+<li>Finds shortest paths from a single source to all nodes in a graph with non-negative edge weights. Use Dijkstra for weighted shortest-path problems where weights are &gt;= 0.</li>
+</ul>
+<p>b. Complexity</p>
+<ul>
+<li>Using a binary heap (priority queue): O((V + E) log V) typically written O(E log V)</li>
+<li>Space: O(V) for distances and predecessor information</li>
+</ul>
+<p>c. Specific steps (walkthrough)</p>
+<ul>
+<li>Initialize distance[source]=0, all others = ∞. Use a min-priority queue keyed by distance.</li>
+<li>Simple Explanation: Greedily take smallest tenative distance, update if we find shorter paths.</li>
+<li>Extract node u with smallest tentative distance; for each neighbor v of u relax the edge: if dist[u] + w(u,v) &lt; dist[v], update dist[v] and predecessor, and push/update v in the queue.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=1PPfjBS58Go">Helpful Video</a></p>
+<p>d. Data structures</p>
+<ul>
+<li>Min-priority queue (binary heap), distance array/map, predecessor map, adjacency list for neighbors.</li>
+</ul>
+<p>Restrictions: edges must have non-negative weights</p>
+<hr>
+<h3 id="4-kruskals-minimum-spanning-tree-mst"><a class="header" href="#4-kruskals-minimum-spanning-tree-mst">4) Kruskal’s Minimum Spanning Tree (MST)</a></h3>
+<blockquote>
+<p>Recall that a Minimum Spanning Tree (MST) is the cheapest way (lowest total edge weight) to connect all nodes (vertices) in a weighted, connected graph without creating any cycles</p>
+</blockquote>
+<p><img src="images/mst.png" alt="alt text"></p>
+<p>a. What it does / when to use it</p>
+<ul>
+<li>Computes an MST for a connected, undirected, weighted graph by greedily selecting the smallest-weight edges that do not form a cycle.</li>
+</ul>
+<p>b. Complexity</p>
+<ul>
+<li>Time: O(E log E) for sorting edges</li>
+<li>Space: O(V) for union-find structures and output MST edges</li>
+</ul>
+<p>c. Specific steps (walkthrough)</p>
+<ul>
+<li>Sort all edges ascending by weight.</li>
+<li>Initialize a disjoint-set (union-find) with each vertex in its own set.</li>
+<li>Have some function <code>find(N)</code> that returns which tree a node <code>N</code> is in.</li>
+<li>Iterate sorted edges: for edge <code>(u,v,w)</code>, if <code>find(u) != find(v)</code> then <code>union(u,v)</code> and include edge in MST.</li>
+<li>Continue until MST has <code>V-1</code> edges.</li>
+</ul>
+<p>d. Data structures</p>
+<ul>
+<li>Edge list (sorted), Union-Find (disjoint-set) data structure with path compression and union by rank.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=71UQH7Pr9kU">Helpful 2 Minute Video</a></p>
+<hr>
+<h3 id="5-prims-minimum-spanning-tree-mst"><a class="header" href="#5-prims-minimum-spanning-tree-mst">5) Prim’s Minimum Spanning Tree (MST)</a></h3>
+<p>a. What it does / when to use it</p>
+<ul>
+<li>Grows an MST from a starting vertex by repeatedly adding the cheapest edge connecting the growing tree to a new vertex. Can be more efficient for dense graphs.</li>
+</ul>
+<p>b. Complexity</p>
+<ul>
+<li>Time Complexity using a binary heap + adjacency list: O(E log V)</li>
+<li>Space: O(V)</li>
+</ul>
+<p>c. Specific steps (walkthrough)</p>
+<ul>
+<li>Pick arbitrary start vertex; mark it in the MST set.</li>
+<li>Maintain a min-priority queue of candidate edges keyed by edge weight.</li>
+<li>Repeatedly extract the smallest edge that connects the tree to a new vertex, add that vertex and update candidate edges for its neighbors.</li>
+</ul>
+<p>d. Data structures</p>
+<ul>
+<li>Priority queue (min-heap), adjacency list or matrix, arrays to track best edge/weights and whether a vertex is in the MST.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=cplfcGZmX7I">Helpful 2 Minute Video</a></p>
+<hr>
+<h3 id="6-topological-sort"><a class="header" href="#6-topological-sort">6) Topological Sort</a></h3>
+<p>a. What it does / when to use it</p>
+<ul>
+<li>Produces a linear ordering of nodes in a directed acyclic graph (DAG) such that for every directed edge <code>(u, v)</code>, <code>u</code> appears before <code>v</code>. Use it for scheduling tasks with prerequisites, build systems, and course ordering.</li>
+</ul>
+<p>b. Complexity</p>
+<ul>
+<li>Time: O(V + E)</li>
+<li>Space: O(V)</li>
+</ul>
+<p>c. Specific steps (walkthrough)</p>
+<ul>
+<li>Perform a Depth First Search (DFS) on the Directed Acyclic Graph (DAG) and</li>
+<li>for each vertex:
+<ul>
+<li>push it onto a stack only after visiting all its adjacent vertices. This ensures that every vertex appears after all its neighboring vertices.</li>
+</ul>
+</li>
+<li>Finally, reversing the stack (or popping elements from it) gives the topological ordering of the graph.</li>
+</ul>
+<p>d. Data structures</p>
+<ul>
+<li>In-degree array/map, queue, adjacency list.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=7J3GadLzydI">Helpful Video, Start at 1:05</a></p>
+<hr>
+<h3 id="7-selection-sort"><a class="header" href="#7-selection-sort">7) Selection Sort</a></h3>
+<p>a. What it does / when to use it</p>
+<ul>
+<li>Simple comparison-based sorting algorithm that repeatedly selects the minimum (or maximum) element from the unsorted portion and moves it to the end of the sorted portion. Use primarily for teaching or tiny arrays where simplicity matters; not used in production for large n.</li>
+</ul>
+<p>b. Complexity</p>
+<ul>
+<li>Time: O(n^2) comparisons and O(n) swaps</li>
+<li>Space: O(1) extra space (in-place)</li>
+</ul>
+<p>c. Specific steps (walkthrough)</p>
+<ul>
+<li>For i from 0 to n-2: find index minIndex of smallest element in A[i..n-1], swap A[i] and A[minIndex].</li>
+<li>Example: A=[4,2,7,1]
+<ul>
+<li>i=0: min=1 at index 3 -&gt; swap -&gt; [1,2,7,4]</li>
+<li>i=1: min=2 at index 1 -&gt; swap (no-op) -&gt; [1,2,7,4]</li>
+<li>i=2: min=4 at index 3 -&gt; swap -&gt; [1,2,4,7]</li>
+</ul>
+</li>
+</ul>
+<p>d. Data structures</p>
+<ul>
+<li>Array; uses indices and constant extra variables.</li>
+</ul>
+<hr>
+<h3 id="8-quick-sort"><a class="header" href="#8-quick-sort">8) Quick Sort</a></h3>
+<p>a. What it does / when to use it</p>
+<ul>
+<li>Divide-and-conquer sorting algorithm that partitions an array around a pivot, recursively sorts partitions. Use Quick Sort for average-case fast in-memory sorting; it’s often the fastest practical comparison sort.</li>
+</ul>
+<p>b. Complexity</p>
+<ul>
+<li>Average time: O(n log n)</li>
+<li>Worst-case time: O(n^2) (bad pivot choices)</li>
+<li>Space: O(log n) expected recursion depth (in-place partitioning); O(n) worst-case recursion depth.</li>
+</ul>
+<p>c. Specific steps (walkthrough)</p>
+<ul>
+<li>Choose a pivot (first, last, random, median-of-three). Partition array into elements &lt; pivot, pivot, and &gt; pivot (in-place schemes like Lomuto/Hoare). Recursively sort the two partitions.</li>
+<li>Example: A=[3,6,2,7,5], choose pivot 5
+<ul>
+<li>partition -&gt; [3,2,5,6,7] (positions left of pivot &lt;5, right &gt;5)</li>
+<li>recurse on [3,2] and [6,7] etc.</li>
+</ul>
+</li>
+</ul>
+<p>d. Data structures</p>
+<ul>
+<li>Array in-place, recursion stack. Partitioning uses index pointers.</li>
+</ul>
+<p>Notes: Randomized pivot or median-of-three reduces the chance of worst-case; quicksort is not stable unless implemented carefully.</p>
+<hr>
+<h3 id="9-merge-sort"><a class="header" href="#9-merge-sort">9) Merge Sort</a></h3>
+<p>a. What it does / when to use it</p>
+<ul>
+<li>Divide-and-conquer sorting algorithm that splits the array in half, recursively sorts each half, and merges the sorted halves. Use when stable sort is required or predictable O(n log n) worst-case performance is important; good for external sorting and linked lists.</li>
+</ul>
+<p>b. Complexity</p>
+<ul>
+<li>Time: O(n log n) worst/average/best</li>
+<li>Space: O(n) extra space for arrays (merge buffers).</li>
+</ul>
+<p>c. Specific steps (walkthrough)</p>
+<ul>
+<li>Recursively split the array until subarrays of size 1. Merge pairs of sorted subarrays by repeatedly taking the smaller head element and writing it to the output array.</li>
+<li>Example: A=[4,1,3,2]
+<ul>
+<li>split [4,1] and [3,2]</li>
+<li>split further to [4],[1] and [3],[2]</li>
+<li>merge [4] and [1] -&gt; [1,4]; merge [3] and [2] -&gt; [2,3]</li>
+<li>merge [1,4] and [2,3] -&gt; [1,2,3,4]</li>
+</ul>
+</li>
+</ul>
+<p>d. Data structures</p>
+<ul>
+<li>Arrays, temporary buffer/array for merging, recursion stack.</li>
+</ul>
+<p>Notes: Merge sort is stable and has reliable performance; useful when worst-case guarantees or stability are needed.</p>
+<hr>
+<h2 id="fair-game--conceptual-questions-examples"><a class="header" href="#fair-game--conceptual-questions-examples">Fair-Game / Conceptual Questions (examples)</a></h2>
+<ul>
+<li>Given a graph and asked for the shortest path in an unweighted graph from A to E, use BFS and reconstruct the path.</li>
+<li>Order classes to satisfy prerequisites use Topological Sort on the prerequisite DAG.</li>
+<li>What is the time and space complexity of Prim’s MST</li>
+<li>True/False: Kruskal’s MST uses a Binary Heap</li>
+</ul>
+<h2 id="not-fair-game"><a class="header" href="#not-fair-game">Not Fair-Game</a></h2>
+<ul>
+<li>Writing code is intentionally excluded from the conceptual questions — focus on the algorithmic steps, trade-offs, and when to pick each approach.</li>
+</ul>
+<hr><div style="break-before: page; page-break-before: always;"></div>
+<h1 id="example-problems"><a class="header" href="#example-problems">Example Problems</a></h1>
+<p><img src="images/graph_problems.png" alt="alt text"></p>
+<hr>
+<p>Algorithm-focused example (conceptual)</p>
+<p>Given the directed, weighted graph below, perform the following (no code required - show steps and reasoning):</p>
+<ul>
+<li>Run Dijkstra’s algorithm from node <code>A</code> and show the tentative distance table after each extraction from the priority queue. Indicate the final shortest-path.</li>
+<li>Using the final predecessor pointers, write the shortest path and total cost from <code>A</code> to <code>E</code>.</li>
+<li>Explain why Dijkstra is valid here (mention weight constraints) and what would break if negative edges were present.</li>
+</ul>
+<p>Graph (weights), draw the graph and then run Dijkstra’s:</p>
+<ul>
+<li>A -&gt; B (4), A -&gt; C (1)</li>
+<li>C -&gt; B (2), B -&gt; D (5)</li>
+<li>C -&gt; D (8), D -&gt; E (2)</li>
+<li>B -&gt; E (10)</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>
