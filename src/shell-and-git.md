@@ -17,6 +17,7 @@ Again, just think the basics
 2. How to commit changes with a message
 3. How to create/checkout a new branch
 4. How to push changes to a remote (github) repository
+5. How to see a list of all commits
 
 > If this is no-stress for you, great job! You've successfully become really comfortable with git (an in-demand and employable skill)
 

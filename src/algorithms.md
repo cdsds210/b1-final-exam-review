@@ -155,6 +155,8 @@ d. Data structures
 
 [Helpful 2 Minute Video](https://www.youtube.com/watch?v=cplfcGZmX7I)
 
+> **NOTE**: You only need to master (know specific steps) of 1 of the MST algorithms, but you should know the names, data structures, and time/space complexity of each
+
 ---
 
 ### 6) Topological Sort
