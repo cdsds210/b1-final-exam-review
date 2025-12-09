@@ -87,11 +87,11 @@ b. Complexity
 
 c. Specific steps (walkthrough)
 
-- Initialize distance[source]=0, all others = ∞. Use a min-priority queue keyed by distance.
+- Initialize `distance[source]=0`, all others = ∞. Use a min-priority queue keyed by distance.
 - Simple Explanation: Greedily take smallest tenative distance, update if we find shorter paths.
-- Extract node u with smallest tentative distance; for each neighbor v of u relax the edge: if dist[u] + w(u,v) < dist[v], update dist[v] and predecessor, and push/update v in the queue.
+- Extract node u with smallest tentative distance; for each neighbor v of u relax the edge: if `dist[u] + w(u,v) < dist[v]`, update `dist[v]` and predecessor, and push/update `v` in the queue.
 
-[Helpful Video](https://www.youtube.com/watch?v=1PPfjBS58Go)
+[Helpful Video (Can skip to 0:20)](https://www.youtube.com/watch?v=1PPfjBS58Go)
 
 d. Data structures
 
@@ -181,7 +181,7 @@ d. Data structures
 
 - In-degree array/map, queue, adjacency list.
 
-[Helpful Video, Start at 1:05](https://www.youtube.com/watch?v=7J3GadLzydI)
+[Helpful Video, Can Skip to 1:05](https://www.youtube.com/watch?v=7J3GadLzydI)
 
 ---
 

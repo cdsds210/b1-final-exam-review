@@ -6,7 +6,7 @@ You just need to know the stuff you've been doing all semester!
 
 1. How do you see what directory you're currently in?
 2. How do you change your working directory? To a subfolder? To a parent directory?
-3. How can you see the full content of a file? How can you peak the beginning content?
+3. How can you see the full content of a file? How can you peek the beginning/ending content?
 4. How can see all files in your current directory? What flag do you need for hidden files? What flag to show file permissions?
 
 ## Git

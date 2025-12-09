@@ -10,7 +10,7 @@
 - Pattern matching: `match` for control flow and destructuring.
 - `Option<T>` to handle possibility of `None`, can be propagated with the `?` operator.
 - Error handling: `Result<T, E>` for recoverable errors, `panic!` for unrecoverable; prefer `?` for propagation.
-- `enum`s are used for object with different variants (ex: `Direction::North`, `Direction::South`, and `Direction::East`)
+- `enum`s are used for objects with different variants (ex: `Direction::North`, `Direction::South`, and `Direction::East`)
 - `structs` are used to group related data, and provide OOP functionality with `impl`
 
 ## Midterm 2 Content

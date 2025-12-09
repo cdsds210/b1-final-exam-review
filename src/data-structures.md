@@ -60,6 +60,8 @@ Stack operations: Push 5, Push 3, Push 7, Pop, Peek, Pop
 - After Peek: [5, 3], return 3 (no change)
 - After Pop: [5], returned 3
 
+> In rust, all peek and pop operations return `Option<T>`, to account for the possibility of an empty stack (same goes for Queues)
+
 ---
 
 ## Queue
@@ -92,6 +94,8 @@ A linear data structure that follows the **First-In-First-Out (FIFO)** principle
   - Circular buffers are more cache-friendly and faster in practice, even with potential reallocations.
   - Rust's `VecDeque` uses a circular buffer for this reason.
 
+> You can either use `push_back` and `pop_front` OR `push_front` and `pop_back`, but NOT `push_front` and `pop_front` to implement a Queue. Why?
+
 ### When to Use
 
 - BFS traversal (visit nodes level-by-level)
@@ -117,8 +121,8 @@ Queue operations: Enqueue 10, Enqueue 20, Enqueue 30, Dequeue, Peek, Dequeue
 
 A **complete binary tree** (all levels filled except possibly the last, which is filled left-to-right) that satisfies the **heap property**:
 
-- **Min-Heap:** parent \le children
-- **Max-Heap:** parent \ge children
+- **Min-Heap:** parent ≤ children
+- **Max-Heap:** parent ≥ children
 
 Used as an efficient priority queue data structure.
 
@@ -143,7 +147,7 @@ Heaps are stored in an **array** for efficiency:
 - For node at index i:
   - Left child at index 2i + 1
   - Right child at index 2i + 2
-  - Parent at index \lfloor (i-1)/2 \rfloor
+  - Parent at index ⌊(i−1)/2⌋
 
 Same heap as above in array form: `[1, 3, 5, 7, 6, 8]`
 
@@ -257,7 +261,7 @@ This ordering enables efficient searching and insertion.
 
 ### Balanced vs. Unbalanced
 
-- **Balanced BST:** height \approx log n — all operations are O(log n).
+- **Balanced BST:** height ≈ log n — all operations are O(log n).
 - **Unbalanced BST:** height up to n — degenerates to a linked list if not managed.
 - **Self-balancing:** Red-Black trees and AVL trees automatically rebalance on insertion/deletion through rotations, guaranteeing O(log n) operations.
 

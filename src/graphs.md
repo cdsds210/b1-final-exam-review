@@ -14,7 +14,7 @@ Undirected Graph:
 
 **Weighted Graph**
 
-Definition: ANy graph where each edge is assigned a numerical value, or "weight," which can represent a cost, distance, or other metric
+Definition: Any graph where each edge is assigned a numerical value, or "weight," which can represent a cost, distance, or other metric
 
 Can be Directed (With Potentially Different Weights for Different Directions)
 
@@ -47,6 +47,8 @@ Or as short as two elements.
 Trees (as graphs)
 
 ![alt text](images/tree.png)
+
+> 💡 What vocab words can we use to describe a tree?
 
 ## Graph
 
