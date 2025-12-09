@@ -1,6 +1,6 @@
 # Final Exam Review
 
-A repository containing the markdown files for B2 and B3 discussion section final exam review.
+A repository containing the mdbook files for B2 and B3 discussion section final exam review.
 
 [![View the mdBook](https://img.shields.io/badge/mdBook-b1--final--exam--review-blue)](https://cdsds210.github.io/b1-final-exam-review/)
 

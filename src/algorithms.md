@@ -95,7 +95,7 @@ c. Specific steps (walkthrough)
 
 d. Data structures
 
-- Min-priority queue (binary heap), distance array/map, predecessor map, adjacency list for neighbors.
+- Min-priority queue (binary heap), distance vector/map, predecessor map, adjacency list for neighbors.
 
 Restrictions: edges must have non-negative weights
 
@@ -151,7 +151,7 @@ c. Specific steps (walkthrough)
 
 d. Data structures
 
-- Priority queue (min-heap), adjacency list or matrix, arrays to track best edge/weights and whether a vertex is in the MST.
+- Priority queue (min-heap), adjacency list or matrix, vectors to track best edge/weights and whether a vertex is in the MST.
 
 [Helpful 2 Minute Video](https://www.youtube.com/watch?v=cplfcGZmX7I)
 
@@ -179,7 +179,7 @@ c. Specific steps (walkthrough)
 
 d. Data structures
 
-- In-degree array/map, queue, adjacency list.
+- In-degree vector/map, stack, adjacency list.
 
 [Helpful Video, Can Skip to 1:05](https://www.youtube.com/watch?v=7J3GadLzydI)
 
@@ -189,7 +189,7 @@ d. Data structures
 
 a. What it does / when to use it
 
-- Simple comparison-based sorting algorithm that repeatedly selects the minimum (or maximum) element from the unsorted portion and moves it to the end of the sorted portion. Use primarily for teaching or tiny arrays where simplicity matters; not used in production for large n.
+- Simple comparison-based sorting algorithm that repeatedly selects the minimum (or maximum) element from the unsorted portion and moves it to the end of the sorted portion. Use primarily for teaching or tiny vectors where simplicity matters; not used in production for large n.
 
 b. Complexity
 
@@ -206,7 +206,7 @@ c. Specific steps (walkthrough)
 
 d. Data structures
 
-- Array; uses indices and constant extra variables.
+- vector; uses indices and constant extra variables.
 
 ---
 
@@ -214,7 +214,7 @@ d. Data structures
 
 a. What it does / when to use it
 
-- Divide-and-conquer sorting algorithm that partitions an array around a pivot, recursively sorts partitions. Use Quick Sort for average-case fast in-memory sorting; it's often the fastest practical comparison sort.
+- Divide-and-conquer sorting algorithm that partitions an vector around a pivot, recursively sorts partitions. Use Quick Sort for average-case fast in-memory sorting; it's often the fastest practical comparison sort.
 
 b. Complexity
 
@@ -224,14 +224,14 @@ b. Complexity
 
 c. Specific steps (walkthrough)
 
-- Choose a pivot (first, last, random, median-of-three). Partition array into elements < pivot, pivot, and > pivot (in-place schemes like Lomuto/Hoare). Recursively sort the two partitions.
+- Choose a pivot (first, last, random, median-of-three). Partition vector into elements < pivot, pivot, and > pivot (in-place schemes like Lomuto/Hoare). Recursively sort the two partitions.
 - Example: A=[3,6,2,7,5], choose pivot 5
   - partition -> [3,2,5,6,7] (positions left of pivot <5, right >5)
   - recurse on [3,2] and [6,7] etc.
 
 d. Data structures
 
-- Array in-place, recursion stack. Partitioning uses index pointers.
+- vector in-place, recursion stack. Partitioning uses index pointers.
 
 Notes: Randomized pivot or median-of-three reduces the chance of worst-case; quicksort is not stable unless implemented carefully.
 
@@ -241,16 +241,16 @@ Notes: Randomized pivot or median-of-three reduces the chance of worst-case; qui
 
 a. What it does / when to use it
 
-- Divide-and-conquer sorting algorithm that splits the array in half, recursively sorts each half, and merges the sorted halves. Use when stable sort is required or predictable O(n log n) worst-case performance is important; good for external sorting and linked lists.
+- Divide-and-conquer sorting algorithm that splits the vector in half, recursively sorts each half, and merges the sorted halves. Use when stable sort is required or predictable O(n log n) worst-case performance is important; good for external sorting and linked lists.
 
 b. Complexity
 
 - Time: O(n log n) worst/average/best
-- Space: O(n) extra space for arrays (merge buffers).
+- Space: O(n) extra space for vectors (merge buffers).
 
 c. Specific steps (walkthrough)
 
-- Recursively split the array until subarrays of size 1. Merge pairs of sorted subarrays by repeatedly taking the smaller head element and writing it to the output array.
+- Recursively split the vector until subvectors of size 1. Merge pairs of sorted subvectors by repeatedly taking the smaller head element and writing it to the output vector.
 - Example: A=[4,1,3,2]
   - split [4,1] and [3,2]
   - split further to [4],[1] and [3],[2]
@@ -259,7 +259,7 @@ c. Specific steps (walkthrough)
 
 d. Data structures
 
-- Arrays, temporary buffer/array for merging, recursion stack.
+- vectors, temporary buffer/vector for merging, recursion stack.
 
 Notes: Merge sort is stable and has reliable performance; useful when worst-case guarantees or stability are needed.
 
